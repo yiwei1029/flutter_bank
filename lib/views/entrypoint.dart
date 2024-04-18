@@ -6,12 +6,15 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryData = MediaQuery.of(context);
+    final screenWidth = mediaQueryData.size.width;
+    final screenHeight = mediaQueryData.size.height;
     return Scaffold(
         body: Stack(
       children: [
         Container(
-          height: 825,
-          width: 375,
+          height: screenHeight,
+          width: screenWidth,
           color: Colors.white,
         ),
         Align(

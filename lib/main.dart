@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/views/entrypoint.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 Widget defaultHome = const MainScreen();
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,9 +14,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryData = MediaQuery.of(context);
+    final screenWidth = mediaQueryData.size.width;
+    final screenHeight = mediaQueryData.size.height;
+
     //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
     return ScreenUtilInit(
-      designSize: const Size(375, 825),
+      designSize: Size(screenWidth, screenHeight),
       minTextAdapt: true,
       splitScreenMode: true,
       // Use builder only if you need to use library outside ScreenUtilInit context
